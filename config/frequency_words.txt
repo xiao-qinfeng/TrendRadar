@@ -1,40 +1,24 @@
 DeepSeek
-梁文锋
-
 月之暗面
 kimi
 
 豆包
-doubao
-
-文心
-
-
-千问
-
 混元
-hunyuan
-
+文心
+千问
 
 字节
 bytedance
-张一鸣
 
-特斯拉
+
 马斯克
-
-微软
-Microsoft
-
+自动驾驶
+星链
+商业航天
 
 英伟达
 NVIDIA
 黄仁勋
-
-AMD
-
-Mac 
-ios
 
 
 谷歌
@@ -49,21 +33,13 @@ sora
 claude
 Anthropic
 
-
-
 ai
 !gai
 人工智能
 产品经理
 
-自动驾驶
-
 机器人
 宇树
-
-
-
-
 
 科技
 恒生科技
@@ -73,7 +49,6 @@ ai
 光刻机
 新质生产力
 
-anki 
 
 新闻联播 
 
