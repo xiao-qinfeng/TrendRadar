@@ -1,12 +1,12 @@
 应用程序:
-  version_check_url: "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version"
-show_version_update: true # Controls whether to display version update prompts. If false, new version prompts will not be accepted.
+version_check_url:“https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version”
+show_version_update: true #控制是否显示版本更新提示。如果为false，则不接受新版本提示。
 
-crawler:
-request_interval: 1000 # Request interval (milliseconds)
-enable_crawler: true # Whether to enable the news crawling function. If false, the program will stop directly.
-use_proxy: false # Whether to enable proxy, false means disabled
-  default_proxy: "http://127.0.0.1:10086"
+爬虫:
+request_interval: 1000 #请求间隔（毫秒）
+enable_crawler: true #是否启用新闻采集功能。如果为false，程序将直接停止。
+use_proxy: false #是否启用代理，false表示不启用
+default_proxy:“http://127.0.0.1:10086”
 
 # 🔸 daily（当日汇总模式）
 #   • 推送时机：按时推送(默认每小时推送一次)
@@ -24,9 +24,9 @@ use_proxy: false # Whether to enable proxy, false means disabled
 #   • 适用场景：避免重复信息干扰
 
 # 推送模式选择
-report:
-  mode: "daily" # 可选: "daily"|"incremental"|"current"
-rank_threshold: 5 # Highlight threshold for ranking
+报告:
+模式：“incremental”#可选：“daily”|“incremental”|“current”
+rank_threshold: 5 #突出排名的阈值
 
 通知:
   enable_notification: true # 是否启用通知功能，如果 false，则不发送手机通知
@@ -46,26 +46,26 @@ rank_threshold: 5 # Highlight threshold for ranking
     # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
     # 如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
     time_range:
-      start: "20:00"  # 推送时间窗口开始（北京时间）
+      start: "6:00"  # 推送时间窗口开始（北京时间）
       end: "22:00"    # 推送时间窗口结束（北京时间）
-    once_per_day: true  # 每天在时间窗口内只推送一次，如果 false，则窗口内每次执行都推送
+    once_per_day: false  # 每天在时间窗口内只推送一次，如果 false，则窗口内每次执行都推送
     push_record_retention_days: 7  # 推送记录保留天数
 
   # 请务必妥善保管好 webhooks，不要公开
-  If you deploy this project on GitHub by forking, please do not fill in any webhooks here. Instead, fill in the webhooks in the GitHub Secret.
+如果你通过分支在GitHub上部署这个项目，请不要在这里填写任何webhooks。相反，请在GitHub Secret中填写webhooks。
   # 不然轻则手机上收到奇怪的广告推送，重则存在更严重的安全隐患
-  webhooks:
-feishu_url: "" # The webhook URL of the Feishu robot
-dingtalk_url: "" # Webhook URL of DingTalk robot
-wework_url: "" # The webhook URL of the WeCom robot
+人:
+feshu_url: "" # feshu_robot的webhook URL
+dingtalk_url: "" #钉钉机器人的Webhook URL
+wework_url: "" # WeCom机器人的webhook URL
 电报机器人令牌： "" # 电报机器人令牌
 电报聊天 ID："" # 电报聊天 ID
-email_from: "" # Email address of the sender
-email_password: "" # The password or authorization code of the sender's email account
+email_from: "" #发件人的电子邮件地址
+email_password: "" #发件人的邮箱密码或授权码
     email_to: "" # 收件人邮箱地址，多个收件人用逗号分隔
-email_smtp_server: "" # SMTP server address (optional, leave blank to auto-detect)
-email_smtp_port: "" # SMTP port (optional, leave blank to auto-detect)
-ntfy_server_url: "https:/
+email_smtp_server: "" # SMTP服务器地址（可选，留空自动检测）
+email_smtp_port: "" # SMTP端口（可选，留空自动检测）
+ntfy_server_url: “https: /
 tfy.sh" # ntfy 服务器地址。默认使用公共服务。您可以将其更改为自托管地址。
 ntfy 主题名称： "" # ntfy 主题名称
 ntfy_token: "" # ntfy 访问令牌（可选，用于私有主题）
@@ -105,7 +105,7 @@ ntfy_token: "" # ntfy 访问令牌（可选，用于私有主题）
 名字: "财联社热门"
   - id: "gelonghui"
 名字: "格隆汇"
-  - id: "xueqiu"
+  - id: “雪球”
 名字: "雪球"
   - id: "jin10"
 名字: "金十数据"
@@ -125,7 +125,7 @@ ntfy_token: "" # ntfy 访问令牌（可选，用于私有主题）
 名字: "虎扑"
 
   # === 科技类平台 ===
-  - id: “ithome”
+- id：“ithome”
 名字: "IT之家"
   - id: "juejin"
 名字: "掘金"
