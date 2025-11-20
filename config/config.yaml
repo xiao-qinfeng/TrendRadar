@@ -1,11 +1,11 @@
-app:
+应用程序:
   version_check_url: "https://raw.githubusercontent.com/sansan0/TrendRadar/refs/heads/master/version"
-  show_version_update: true # 控制显示版本更新提示，如果 false，则不接受新版本提示
+show_version_update: true # Controls whether to display version update prompts. If false, new version prompts will not be accepted.
 
 crawler:
-  request_interval: 1000 # 请求间隔(毫秒)
-  enable_crawler: true # 是否启用爬取新闻功能，如果 false，则直接停止程序
-  use_proxy: false # 是否启用代理，false 时为关闭
+request_interval: 1000 # Request interval (milliseconds)
+enable_crawler: true # Whether to enable the news crawling function. If false, the program will stop directly.
+use_proxy: false # Whether to enable proxy, false means disabled
   default_proxy: "http://127.0.0.1:10086"
 
 # 🔸 daily（当日汇总模式）
@@ -26,9 +26,9 @@ crawler:
 # 推送模式选择
 report:
   mode: "daily" # 可选: "daily"|"incremental"|"current"
-  rank_threshold: 5 # 排名高亮阈值
+rank_threshold: 5 # Highlight threshold for ranking
 
-notification:
+通知:
   enable_notification: true # 是否启用通知功能，如果 false，则不发送手机通知
   message_batch_size: 4000 # 消息分批大小（字节）(这个配置别动)
   dingtalk_batch_size: 20000 # 钉钉消息分批大小（字节）(这个配置也别动)
@@ -52,109 +52,99 @@ notification:
     push_record_retention_days: 7  # 推送记录保留天数
 
   # 请务必妥善保管好 webhooks，不要公开
-  # 如果你以 fork 的方式将本项目部署在 GitHub 上，请勿在此填写任何 webhooks，而是将 webhooks 填入 GitHub Secret
+  If you deploy this project on GitHub by forking, please do not fill in any webhooks here. Instead, fill in the webhooks in the GitHub Secret.
   # 不然轻则手机上收到奇怪的广告推送，重则存在更严重的安全隐患
   webhooks:
-    feishu_url: "" # 飞书机器人的 webhook URL
-    dingtalk_url: "" # 钉钉机器人的 webhook URL
-    wework_url: "" # 企业微信机器人的 webhook URL
-    telegram_bot_token: "" # Telegram Bot Token
-    telegram_chat_id: "" # Telegram Chat ID
-    email_from: "" # 发件人邮箱地址
-    email_password: "" # 发件人邮箱密码或授权码
+feishu_url: "" # The webhook URL of the Feishu robot
+dingtalk_url: "" # Webhook URL of DingTalk robot
+wework_url: "" # The webhook URL of the WeCom robot
+电报机器人令牌： "" # 电报机器人令牌
+电报聊天 ID："" # 电报聊天 ID
+email_from: "" # Email address of the sender
+email_password: "" # The password or authorization code of the sender's email account
     email_to: "" # 收件人邮箱地址，多个收件人用逗号分隔
-    email_smtp_server: "" # SMTP服务器地址（可选，留空自动识别）
-    email_smtp_port: "" # SMTP端口（可选，留空自动识别）
-    ntfy_server_url: "https://ntfy.sh" # ntfy服务器地址，默认使用公共服务，可改为自托管地址
-    ntfy_topic: "" # ntfy主题名称
-    ntfy_token: "" # ntfy访问令牌（可选，用于私有主题）
+email_smtp_server: "" # SMTP server address (optional, leave blank to auto-detect)
+email_smtp_port: "" # SMTP port (optional, leave blank to auto-detect)
+ntfy_server_url: "https:/
+tfy.sh" # ntfy 服务器地址。默认使用公共服务。您可以将其更改为自托管地址。
+ntfy 主题名称： "" # ntfy 主题名称
+ntfy_token: "" # ntfy 访问令牌（可选，用于私有主题）
 
 # 用于让关注度更高的新闻在更前面显示，即用算法重新组合不同平台的热搜排序形成你侧重的热搜，合起来是 1 就行
-weight:
-  rank_weight: 0.2 # 排名权重
-  frequency_weight: 0.3 # 频次权重
-  hotness_weight: 0.5 # 热度权重
+重量：
+排名权重：0.5  # 排名的权重
+频率权重：0.3  # 频率权重
+热度权重：0.2  # 热度的权重
 # name 可以定义任意名称，只具有显示作用，即使项目运行了几天后，忽然改掉 name 也不会影响代码的正常运行
-platforms:
+平台：
   
   # === 综合新闻媒体类 ===
-  - id: "toutiao"
-    name: "今日头条"
-  - id: "baidu"
-    name: "百度热搜"
-  - id: "thepaper"
-    name: "澎湃新闻"
+  - id: “澎湃新闻”
+名字: "澎湃新闻"
   - id: "ifeng"
-    name: "凤凰网"
-  - id: "cankaoxiaoxi"
-    name: "参考消息"
+名字: "凤凰网"
+- 标识符：校园消息
+名字: "参考消息"
   - id: "sputniknewscn"
-    name: "卫星通讯社"
+名字: "卫星通讯社"
   - id: "zaobao"
-    name: "联合早报"
+名字: "联合早报"
   - id: "mktnews"
-    name: "MKT新闻"
+名字: "MKT新闻"
   - id: "kaopu"
-    name: "靠谱新闻"
+名字: "靠谱新闻"
 
   # === 财经投资类 ===
-  - id: "wallstreetcn-hot"
-    name: "华尔街见闻 最热"
-  - id: "wallstreetcn-quick"
-    name: "华尔街见闻 快讯"
-  - id: "wallstreetcn-news"
-    name: "华尔街见闻 最新"
-  - id: "cls-hot"
-    name: "财联社热门"
+- 标识符： "华尔街见闻-热门
+名字: "华尔街见闻 最热"
+- 标识符： 华尔街见闻-快讯
+名字: "华尔街见闻 快讯"
+- 标识符： "华尔街见闻-新闻
+名字: "华尔街见闻 最新"
+- id: "热门分类
+名字: "财联社热门"
   - id: "gelonghui"
-    name: "格隆汇"
+名字: "格隆汇"
   - id: "xueqiu"
-    name: "雪球"
+名字: "雪球"
   - id: "jin10"
-    name: "金十数据"
+名字: "金十数据"
   - id: "fastbull"
-    name: "快讯通"
+名字: "快讯通"
 
   # === 社交/短视频/娱乐类 ===
   - id: "weibo"
-    name: "微博"
+名字: "微博"
   - id: "douyin"
-    name: "抖音"
-  - id: "bilibili-hot-search"
-    name: "bilibili 热搜"
-  - id: "tieba"
-    name: "贴吧"
+名字: "抖音"
+  - id: “哔哩哔哩热门搜索”
+名字: "bilibili 热搜"
   - id: "zhihu"
-    name: "知乎"
-  - id: "hupu"
-    name: "虎扑"
+名字: "知乎"
+  - id: 虎扑
+名字: "虎扑"
 
   # === 科技类平台 ===
-  - id: "ithome"
-    name: "IT之家"
+  - id: “ithome”
+名字: "IT之家"
   - id: "juejin"
-    name: "掘金"
-  - id: "github"
-    name: "GitHub"
-  - id: "hackernews"
-    name: "Hacker News"
+名字: "掘金"
+  - id: “GitHub”
+名字: “GitHub”
+  - id: “hackernews”
+名字: “黑客新闻”
   - id: "solidot"
-    name: "Solidot"
-  - id: "v2ex"
-    name: "V2EX"
-  - id: "nowcoder"
-    name: "牛客网"
+名字: "Solidot"
+  - id: “v2ex”
+名字: “V2EX”
+  - id: “nowcoder”
+名字: "牛客网"
   - id: "pcbeta"
-    name: "远景论坛"
-  - id: "sspai"
-    name: "少数派"
-  - id: "producthunt"
-    name: "ProductHunt"
-
-  # === 其他/工具类 ===
-  - id: "chongbuluo"
-    name: "虫部落"
-
+名字: "远景论坛"
+  - id: “sspai”
+名字: "少数派"
+  - id: “producthunt”
+名字: “ProductHunt”
   # ======================================================
   # 暂时失败的渠道（可能需要修复或接口已变更）
   # 备注：以下渠道在测试中抓取失败，已暂时注释
